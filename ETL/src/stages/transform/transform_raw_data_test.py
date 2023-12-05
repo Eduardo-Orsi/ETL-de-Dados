@@ -9,6 +9,7 @@ from ...errors.transform_error import TransformError
 def test_transform():
     transform_raw_data = TransformRawData()
     transformed_information = transform_raw_data.transform(extract_contract_mock)
+    print(transformed_information)
     assert isinstance(transformed_information, TransformContract)
     assert isinstance(transformed_information.load_content, list)
     assert isinstance(transformed_information.load_content[0], dict)
