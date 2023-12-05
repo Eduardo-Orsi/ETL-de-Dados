@@ -1,11 +1,11 @@
 from typing import Dict
+from .interfaces.database_repository import DatabaseRepositoryInterface
 from .database import DatabaseConnector
 
 
-class DatabaseRepository:
+class DatabaseRepository(DatabaseRepositoryInterface):
 
-    @classmethod
-    def insert_artist(cls, data: Dict) -> None:
+    def insert_artist(self, data: Dict) -> None:
         query = '''
             INSERT INTO artists
                 (first_name, second_name, surname, artist_id, link, extraction_date)
